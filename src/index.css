@@ -125,3 +125,14 @@ a {
 a:hover {
   color: var(--accent-color);
 }
+
+/* Team Section Hover Effects */
+.wanted-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.2) !important;
+  border-color: var(--accent-color) !important;
+}
+
+.wanted-card:hover img {
+  filter: grayscale(0%) contrast(1.2) !important;
+}

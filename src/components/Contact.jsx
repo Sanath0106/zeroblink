@@ -27,16 +27,7 @@ const Contact = () => {
           animation: 'scan 2s linear infinite'
         }}></div>
 
-        <h3 style={{ fontSize: '2rem', marginBottom: '20px', color: '#fff' }}>
-          San<span className="text-accent">SYN</span>
-        </h3>
-        
-        <div style={{ marginBottom: '30px' }}>
-          <p style={{ color: '#888', marginBottom: '10px' }}>[ TEAM LEADER ]</p>
-          <p style={{ fontSize: '1.2rem', letterSpacing: '1px' }}>
-            Initiating 3-way handshake...
-          </p>
-        </div>
+        {/* Bio removed as per request */}
 
         <div style={{
           border: '1px dashed var(--secondary-color)',

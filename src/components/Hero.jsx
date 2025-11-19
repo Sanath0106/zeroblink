@@ -12,7 +12,7 @@ const Hero = () => {
     // Play a sound effect here if we had one
     
     setTimeout(() => {
-      navigate('/writeups');
+      navigate('/archives');
     }, 2000); // Wait for animation
   };
 
