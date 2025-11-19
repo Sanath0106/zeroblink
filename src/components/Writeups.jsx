@@ -41,41 +41,17 @@ const Writeups = () => {
     // Fake API call - flag hidden in Network tab!
     const fetchFakeData = async () => {
       try {
-        // Create a fake API endpoint response
-        const fakeResponse = {
-          status: 'locked',
-          message: 'System access denied',
-          timestamp: new Date().toISOString(),
-          server: 'zeroblink-secure-01',
-          debug: false,
-          // Hidden in plain sight in the response
-          access_key: 'ZB{s1l3nt_k1ll3rs}',
-          metadata: {
-            version: '2.1.4',
-            encryption: 'AES-256',
-            auth_required: true
-          }
-        };
-
-        // Simulate network delay
-        await new Promise(resolve => setTimeout(resolve, 800));
-        
-        // Make an actual fetch to a data URL so it shows in Network tab
-        const blob = new Blob([JSON.stringify(fakeResponse, null, 2)], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        
-        fetch(url, {
+        // Try to fetch from a fake API endpoint (will fail but show in Network tab)
+        await fetch('/api/v1/system/status', {
           method: 'GET',
           headers: {
             'X-API-Key': 'zeroblink_v1',
-            'X-Request-ID': Math.random().toString(36).substring(7)
+            'X-Request-ID': Math.random().toString(36).substring(7),
+            'Accept': 'application/json'
           }
-        }).then(response => response.json())
-          .then(data => {
-            // This will show in Network tab
-            URL.revokeObjectURL(url);
-          });
-
+        }).catch(() => {
+          // Expected to fail - that's okay, we just want it in Network tab
+        });
       } catch (error) {
         // Silent fail
       }
