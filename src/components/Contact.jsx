@@ -2,8 +2,8 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <section id="contact" className="container" style={{ padding: '100px 20px', textAlign: 'center' }}>
-      <h2 style={{ marginBottom: '50px', fontSize: '3rem' }}>
+    <section id="contact" className="container" style={{ padding: '50px 20px', textAlign: 'center' }}>
+      <h2 style={{ marginBottom: '50px', fontSize: 'clamp(1.5rem, 5vw, 3rem)' }}>
         <span className="text-accent">/</span> ESTABLISH CONNECTION
       </h2>
       

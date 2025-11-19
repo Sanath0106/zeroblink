@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <section id="home" style={{
-      height: '90vh',
+      minHeight: '80vh',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -43,17 +43,21 @@ const Hero = () => {
         }}>
           <h1 style={{ 
             color: 'red', 
-            fontSize: '5rem', 
+            fontSize: 'clamp(2rem, 8vw, 5rem)', 
             fontFamily: 'var(--font-mono)',
-            animation: 'glitch 0.2s infinite'
+            animation: 'glitch 0.2s infinite',
+            textAlign: 'center',
+            padding: '0 20px'
           }}>
             SYSTEM BREACH
           </h1>
           <div style={{
             color: '#fff',
-            fontSize: '1.5rem',
+            fontSize: 'clamp(1rem, 4vw, 1.5rem)',
             marginTop: '20px',
-            fontFamily: 'var(--font-mono)'
+            fontFamily: 'var(--font-mono)',
+            textAlign: 'center',
+            padding: '0 20px'
           }}>
             ACCESSING SECURE FILES...
           </div>
@@ -79,11 +83,11 @@ const Hero = () => {
         <h1 style={{ fontSize: 'clamp(3rem, 10vw, 5rem)', marginBottom: '10px', textShadow: '0 0 10px var(--accent-dim)' }}>
           ZER<span className="text-accent blink">0</span>BLINK
         </h1>
-        <p style={{ fontSize: '1.5rem', letterSpacing: '5px', color: '#888' }}>
+        <p style={{ fontSize: 'clamp(0.8rem, 4vw, 1.5rem)', letterSpacing: 'clamp(2px, 1vw, 5px)', color: '#888' }}>
           &lt; <span className="text-accent">SILENT KILLERS</span> /&gt;
         </p>
         
-        <div style={{ marginTop: '50px' }}>
+        <div style={{ marginTop: '30px' }}>
           <button 
             onClick={handleEnter}
             style={{
